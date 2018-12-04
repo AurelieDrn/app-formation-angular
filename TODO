@@ -1,1 +1,7 @@
 
+✔ créer ClientRoutingModule @started(18-12-04 11:32) @done(18-12-04 11:35) @lasted(3m36s)
+✔ ajouter une route pour instancier PageClientComponent @started(18-12-04 11:36) @done(18-12-04 11:38) @lasted(2m48s)
+✔ créer PageNotFoundRoutingModule @done(18-12-04 11:40)
+✔ ajouter une route pour instancier PageNotFoundComponent @started(18-12-04 11:40) @done(18-12-04 11:41) @lasted(1m41s)
+✔ créer LoginRoutingModule @done(18-12-04 11:43)
+✔ déplacer la route /login @started(18-12-04 11:50) @done(18-12-04 11:50) @lasted(56s)

@@ -11,8 +11,8 @@ import { UiModule } from "./ui/ui.module";
   imports: [
     BrowserModule,
     UiModule,
-    LoginModule,
     NgbModule.forRoot(),
+    LoginModule,
     AppRoutingModule,
   ],
   providers: [],

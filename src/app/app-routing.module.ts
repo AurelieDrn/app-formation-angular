@@ -8,7 +8,6 @@ import {
 import { PageLoginComponent } from "./login/pages/page-login/page-login.component";
 
 const appRoutes: Routes = [
-  { path: "login", component: PageLoginComponent },
   { path: "", redirectTo: "/login", pathMatch: "full" },
   {
     path: "prestations",
@@ -29,7 +28,7 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(appRoutes, {
       enableTracing: false, // <-- debugging purposes only
-      // preloadingStrategy: PreloadAllModules
+      preloadingStrategy: PreloadAllModules,
     }),
   ],
 })
