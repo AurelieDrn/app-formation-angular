@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
+import { State } from "src/app/shared/enums/state.enum";
 import { Prestation } from "src/app/shared/models/prestation";
 
 @Component({
@@ -8,7 +9,8 @@ import { Prestation } from "src/app/shared/models/prestation";
 })
 export class PrestationComponent implements OnInit {
   @Input() item: Prestation;
-
+  // public states = State;
+  public states = Object.values(State);
   constructor() {}
 
   ngOnInit() {}

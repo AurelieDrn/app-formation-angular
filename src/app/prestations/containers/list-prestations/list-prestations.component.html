@@ -1,14 +1,4 @@
-<div class="table-responsive">
-  <table class="table table-hover table-striped">
-    <thead>
-      <tr>
-        <th *ngFor="let item of headers"
-            scope="col">{{ item }}</th>
-      </tr>
-    </thead>
-    <tbody>
-      <app-prestation *ngFor="let obj of collection"
-                      [item]="obj"></app-prestation>
-    </tbody>
-  </table>
-</div>
+<app-tableau [headers]="headers">
+  <app-prestation *ngFor="let obj of collection"
+                  [item]="obj"></app-prestation>
+</app-tableau>
