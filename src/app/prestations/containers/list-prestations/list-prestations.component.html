@@ -1,0 +1,26 @@
+<div class="table-responsive">
+  <table class="table table-hover table-striped">
+    <thead>
+      <tr>
+        <th scope="col">type</th>
+        <th scope="col">client</th>
+        <th scope="col">nb jour</th>
+        <th scope="col">tjm ht</th>
+        <th scope="col">total ht</th>
+        <th scope="col">total ttc</th>
+        <th scope="col">state</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of collection">
+        <td>{{ item.typePresta }}</td>
+        <td>{{ item.client }}</td>
+        <td>{{ item.nbJours }}</td>
+        <td>{{ item.tjmHt }}</td>
+        <td>{{ item.totalHt() }}</td>
+        <td>{{ item.totalTTC() }}</td>
+        <td>{{ item.state }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

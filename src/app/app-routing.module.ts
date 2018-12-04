@@ -5,7 +5,6 @@ import {
   RouterModule,
   Routes,
 } from "@angular/router";
-import { PageLoginComponent } from "./login/pages/page-login/page-login.component";
 
 const appRoutes: Routes = [
   { path: "", redirectTo: "/login", pathMatch: "full" },
