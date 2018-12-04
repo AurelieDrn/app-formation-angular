@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { UiComponent } from './ui.component';
+import { UiComponent } from "./ui.component";
 
-describe('UiComponent', () => {
+describe("UiComponent", () => {
   let component: UiComponent;
   let fixture: ComponentFixture<UiComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UiComponent ]
-    })
-    .compileComponents();
+      declarations: [UiComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('UiComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
