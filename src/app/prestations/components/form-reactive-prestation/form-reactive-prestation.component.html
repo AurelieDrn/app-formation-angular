@@ -1,0 +1,64 @@
+<div class="container">
+  <form novalidate
+        [formGroup]="form"
+        (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="typePresta">typePresta</label>
+      <input formControlName="typePresta"
+             type="text"
+             class="form-control"
+             id="typePresta">
+      <div *ngIf="isError('typePresta')"
+           class="alert alert-danger">champs invalide</div>
+    </div>
+
+    <div class="form-group">
+      <label for="client">Client</label>
+      <input type="text"
+             formControlName="client"
+             class="form-control"
+             id="client">
+      <div *ngIf="isError('client')"
+           class="alert alert-danger">champs invalide</div>
+    </div>
+
+    <div class="form-group">
+      <label for="nbJours">nbJours</label>
+      <input type="number"
+             formControlName="nbJours"
+             class="form-control"
+             id="nbJours">
+    </div>
+
+    <div class="form-group">
+      <label for="tjmHt">tjmHt</label>
+      <input type="number"
+             formControlName="tjmHt"
+             class="form-control"
+             id="tjmHt">
+    </div>
+
+    <div class="form-group">
+      <label for="tauxTva">tauxTva</label>
+      <input type="number"
+             formControlName="tauxTva"
+             class="form-control"
+             id="tauxTva">
+    </div>
+
+    <div class="form-group">
+      <label for="state">State</label>
+      <select class="form-control"
+              formControlName="state"
+              id="state">
+        <option *ngFor="let state of states"
+                [value]="state">{{ state }}</option>
+      </select>
+    </div>
+
+    <button [disabled]="form.invalid"
+            type="submit"
+            class="btn btn-primary">Submit</button>
+  </form>
+</div>

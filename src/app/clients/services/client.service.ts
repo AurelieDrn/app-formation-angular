@@ -23,6 +23,9 @@ export class ClientService {
   }
 
   // add item in collection
+  public add(item: Client): void {
+    this.collection.push(new Client(item));
+  }
 
   // update item in collection
   public update(client: Client, state: StateClient) {
