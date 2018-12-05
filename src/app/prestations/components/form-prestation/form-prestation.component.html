@@ -1,0 +1,68 @@
+<div class="container">
+  <form novalidate
+        #form="ngForm"
+        (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="type">Type</label>
+      <input type="text"
+             name="type"
+             class="form-control"
+             id="type"
+             required
+             [(ngModel)]="init.typePresta">
+    </div>
+
+    <div class="form-group">
+      <label for="client">Client</label>
+      <input type="text"
+             name="client"
+             class="form-control"
+             id="client"
+             required
+             minlength="3"
+             [(ngModel)]="init.client">
+    </div>
+
+    <div class="form-group">
+      <label for="nbjour">Nbjour</label>
+      <input type="number"
+             name="nbjour"
+             class="form-control"
+             id="nbjour"
+             [(ngModel)]="init.nbJours">
+    </div>
+
+    <div class="form-group">
+      <label for="tjmht">Tjmht</label>
+      <input type="number"
+             name="tjmht"
+             class="form-control"
+             id="tjmht"
+             [(ngModel)]="init.tjmHt">
+    </div>
+    <div class="form-group">
+      <label for="tva">Taux TVA</label>
+      <input type="number"
+             name="tva"
+             class="form-control"
+             id="tva"
+             [(ngModel)]="init.tauxTva">
+    </div>
+
+    <div class="form-group">
+      <label for="state">State</label>
+      <select class="form-control"
+              id="state"
+              name="state"
+              [(ngModel)]="init.state">
+        <option *ngFor="let state of states"
+                [value]="state">{{ state }}</option>
+      </select>
+    </div>
+
+    <button [disabled]="form.invalid"
+            type="submit"
+            class="btn btn-primary">Submit</button>
+  </form>
+</div>
