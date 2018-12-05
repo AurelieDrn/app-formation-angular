@@ -11,3 +11,11 @@
 #tab .state-confirme {
   background: $palette-color-four;
 }
+
+.table-striped tbody>*:nth-of-type(odd) tr {
+  background: darken($light-color, 15);
+}
+
+tbody>* {
+  display: contents;
+}
