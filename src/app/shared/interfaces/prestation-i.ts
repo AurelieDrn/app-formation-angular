@@ -8,6 +8,7 @@ export interface PrestationI {
   tjmHt: number;
   tauxTva: number;
   state: State;
+  commentaire: string;
   totalHt(): number;
   totalTTC(tva?: number): number;
 }

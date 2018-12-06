@@ -1,3 +1,29 @@
-<p>
-  detail-prestation works!
-</p>
+<ngb-accordion [closeOthers]="true"
+               activeIds="static-1"
+               *ngIf="presta$ | async as presta">
+  <ngb-panel id="static-1"
+             title="Infos">
+    <ng-template ngbPanelContent>
+      <p>{{ presta.typePresta }}</p>
+      <p>{{ presta.client }}</p>
+    </ng-template>
+  </ngb-panel>
+  <ngb-panel id="static-2">
+    <ng-template ngbPanelTitle>
+      <span>Tarifs</span>
+    </ng-template>
+    <ng-template ngbPanelContent>
+      <p>{{ presta.nbJours }}</p>
+      <p>{{ presta.tjmHt }}</p>
+      <p>{{ presta.tauxTva }}</p>
+      <p>{{ presta | total }}</p>
+      <p>{{ presta | total: presta.tauxTva }}</p>
+    </ng-template>
+  </ngb-panel>
+  <ngb-panel id="static-3"
+             title="State">
+    <ng-template ngbPanelContent>
+      <p>{{ presta.state }}</p>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>

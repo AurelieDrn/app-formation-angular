@@ -4,7 +4,7 @@ import {
   AngularFirestore,
   AngularFirestoreCollection,
 } from "@angular/fire/firestore";
-import { Observable } from "rxjs";
+import { Observable, Subject, BehaviorSubject } from "rxjs";
 import { map } from "rxjs/operators";
 import { State } from "src/app/shared/enums/state.enum";
 import { Prestation } from "src/app/shared/models/prestation";
@@ -16,6 +16,7 @@ export class PrestationService {
   private itemsCollection: AngularFirestoreCollection<Prestation>;
   // Observable qui, lorsqu'on y souscrit, on retourne un observable qui est un tableau de Prestation
   private _collection$: Observable<Prestation[]>;
+  public presta$: BehaviorSubject<Prestation> = new BehaviorSubject(null);
 
   constructor(private afs: AngularFirestore, private http: HttpClient) {
     // this.collection = fakePrestations;
@@ -25,9 +26,14 @@ export class PrestationService {
       // map(data => data.map(doc => new Prestation(doc)))
       // data : tableau json
       map(data => {
-        return data.map(doc => {
-          return new Prestation(doc);
-        });
+        if (data.length > 0) {
+          this.presta$.next(new Prestation(data[0]));
+          return data.map(doc => {
+            return new Prestation(doc);
+          });
+        }
+        this.presta$.next(null);
+        return null;
       }),
     );
     // this.collection$ = this.http.get(`${URL_API}/prestations`).pipe(

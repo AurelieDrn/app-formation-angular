@@ -5,6 +5,7 @@ export class Prestation implements PrestationI {
   id: string;
   typePresta: string;
   client: string;
+  commentaire: string;
   nbJours: number = 0;
   tjmHt: number = 0;
   tauxTva: number = 20;

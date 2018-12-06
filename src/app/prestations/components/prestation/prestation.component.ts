@@ -39,4 +39,9 @@ export class PrestationComponent implements OnInit {
     // traitement response api
     // });
   }
+
+  public getDetail() {
+    this.ps.presta$.next(this.item);
+    console.log(this.ps.presta$);
+  }
 }
