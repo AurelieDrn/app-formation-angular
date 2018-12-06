@@ -7,6 +7,7 @@ import { AddRowComponent } from "./components/add-row/add-row.component";
 import { TableauComponent } from "./components/tableau/tableau.component";
 import { StateDirective } from "./directives/state.directive";
 import { TotalPipe } from "./pipes/total.pipe";
+import { TabComponent } from "./components/tab/tab.component";
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { TotalPipe } from "./pipes/total.pipe";
     TableauComponent,
     StateDirective,
     AddRowComponent,
+    TabComponent,
   ],
   exports: [
     TotalPipe,
@@ -22,6 +24,7 @@ import { TotalPipe } from "./pipes/total.pipe";
     AddRowComponent,
     TemplatesModule,
     FontAwesomeModule,
+    TabComponent,
   ],
   imports: [CommonModule, FontAwesomeModule, RouterModule, TemplatesModule],
 })
