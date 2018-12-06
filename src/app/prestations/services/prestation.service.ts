@@ -1,3 +1,4 @@
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import {
   AngularFirestore,
@@ -16,7 +17,7 @@ export class PrestationService {
   // Observable qui, lorsqu'on y souscrit, on retourne un observable qui est un tableau de Prestation
   private _collection$: Observable<Prestation[]>;
 
-  constructor(private afs: AngularFirestore) {
+  constructor(private afs: AngularFirestore, private http: HttpClient) {
     // this.collection = fakePrestations;
     this.itemsCollection = afs.collection<Prestation>("prestations");
     this._collection$ = this.itemsCollection.valueChanges().pipe(
@@ -29,6 +30,9 @@ export class PrestationService {
         });
       }),
     );
+    // this.collection$ = this.http.get(`${URL_API}/prestations`).pipe(
+    //  map(data => data.map(doc => new Prestation(doc)))
+    // );
   }
 
   // get collection
@@ -53,7 +57,7 @@ export class PrestationService {
       .catch(e => {
         console.log(e);
       });
-    // return this.http.post('urlapi/addprestation', item);
+    // return this.http.post(`${URL_API}/prestations/`, item);
   }
 
   update(item: Prestation, state?: State): Promise<any> {
@@ -68,7 +72,7 @@ export class PrestationService {
       .catch(e => {
         console.log(e);
       });
-    // return this.http.patch('urlapi/prestationupdate/'+item.id, presta);
+    // return this.http.patch(`${URL_API}/prestations/${item.id}`, presta);
   }
 
   public delete(item: Prestation): Promise<any> {
@@ -78,11 +82,11 @@ export class PrestationService {
       .catch(e => {
         console.log(e);
       });
-    // return this.http.delete(`urlapi/prestations/delete/${item.id}`);
+    // return this.http.delete(`${URL_API}/prestations/delete/${item.id}`);
   }
 
   getPrestation(id: string): Observable<Prestation> {
     return this.itemsCollection.doc<Prestation>(id).valueChanges();
-    // return this.http.get(`urlapi/prestations/get/${id}`);
+    // return this.http.get(`${URL_API}/prestations/${id}`);
   }
 }

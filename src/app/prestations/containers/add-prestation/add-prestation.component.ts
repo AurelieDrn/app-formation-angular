@@ -24,5 +24,9 @@ export class AddPrestationComponent implements OnInit {
     });
     // Router relative
     // this.router.navigate(["../", {relativeTo: this.ar}]);
+    // this.ps.add(item).subscribe(data => {
+    // traitement response api
+    //  this.router.navigate(["prestations"]);
+    // });
   }
 }

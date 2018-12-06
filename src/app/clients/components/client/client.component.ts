@@ -21,7 +21,10 @@ export class ClientComponent implements OnInit {
 
   changeState(event) {
     const state = event.target.value;
-    this.clientService.update(this.item, state);
+    this.clientService.update(this.item, state).then(data => {
+      // response api
+      this.item.state = state;
+    });
   }
 
   delete() {

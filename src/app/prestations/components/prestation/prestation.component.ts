@@ -25,11 +25,18 @@ export class PrestationComponent implements OnInit {
       // this.item = data;
       this.item.state = state;
     });
+
+    // this.ps.update(this.item, state).subscribe(data => {
+    //  this.item.state = state;
+    // });
   }
 
   delete() {
     this.ps.delete(this.item).then(data => {
       // traitement response api
     });
+    // this.ps.delete(this.item).subscribe(data => {
+    // traitement response api
+    // });
   }
 }
