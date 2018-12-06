@@ -1,5 +1,5 @@
 <app-tableau [headers]="headers">
-  <app-client *ngFor="let obj of collection"
+  <app-client *ngFor="let obj of collection$ | async"
               [item]="obj">
   </app-client>
 </app-tableau>

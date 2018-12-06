@@ -7,6 +7,7 @@ import { Component, OnInit, Input, ViewEncapsulation } from "@angular/core";
   encapsulation: ViewEncapsulation.None,
 })
 export class TableauComponent implements OnInit {
+  
   @Input() headers: string[];
 
   constructor() {}

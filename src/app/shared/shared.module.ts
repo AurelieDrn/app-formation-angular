@@ -9,13 +9,19 @@ import { StateDirective } from "./directives/state.directive";
 import { TotalPipe } from "./pipes/total.pipe";
 
 @NgModule({
-  declarations: [TotalPipe, TableauComponent, StateDirective, AddRowComponent],
+  declarations: [
+    TotalPipe,
+    TableauComponent,
+    StateDirective,
+    AddRowComponent,
+  ],
   exports: [
     TotalPipe,
     TableauComponent,
     StateDirective,
     AddRowComponent,
     TemplatesModule,
+    FontAwesomeModule,
   ],
   imports: [CommonModule, FontAwesomeModule, RouterModule, TemplatesModule],
 })

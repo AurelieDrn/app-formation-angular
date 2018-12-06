@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { Observable } from "rxjs";
 import { Client } from "src/app/shared/models/client";
 import { ClientService } from "../../services/client.service";
 
@@ -8,13 +9,13 @@ import { ClientService } from "../../services/client.service";
   styleUrls: ["./list-clients.component.scss"],
 })
 export class ListClientsComponent implements OnInit {
-  public collection: Client[];
+  public collection$: Observable<Client[]>;
   public headers: string[];
 
-  constructor(private clientService: ClientService) {}
+  constructor(private cs: ClientService) {}
 
   ngOnInit() {
-    this.collection = this.clientService.collection;
-    this.headers = ["name", "email", "state"];
+    this.collection$ = this.cs.collection$;
+    this.headers = ["name", "email", "state", "delete"];
   }
 }

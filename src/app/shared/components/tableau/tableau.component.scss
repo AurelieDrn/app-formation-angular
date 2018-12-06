@@ -26,3 +26,7 @@ app-page-prestations thead {
   background: $dark-color;
   color: $light-color;
 }
+
+#tab tr td:last-child {
+  text-align: center;
+}

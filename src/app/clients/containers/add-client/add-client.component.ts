@@ -18,7 +18,9 @@ export class AddClientComponent implements OnInit {
   ngOnInit() {}
 
   public add(item: Client) {
-    this.cs.add(item);
-    this.router.navigate(["clients"]);
+    this.cs.add(item).then(data => {
+      // traitement response api
+      this.router.navigate(["clients"]);
+    });
   }
 }

@@ -18,8 +18,10 @@ export class AddPrestationComponent implements OnInit {
   ngOnInit() {}
 
   public add(item: Prestation) {
-    this.ps.add(item);
-    this.router.navigate(["prestations"]);
+    this.ps.add(item).then(data => {
+      // traitement response api
+      this.router.navigate(["prestations"]);
+    });
     // Router relative
     // this.router.navigate(["../", {relativeTo: this.ar}]);
   }

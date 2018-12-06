@@ -1,20 +1,27 @@
-import { Component, OnInit } from "@angular/core";
-import { PrestationService } from "../../services/prestation.service";
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Subscription, Observable } from "rxjs";
 import { Prestation } from "src/app/shared/models/prestation";
+import { PrestationService } from "../../services/prestation.service";
 
 @Component({
   selector: "app-list-prestations",
   templateUrl: "./list-prestations.component.html",
   styleUrls: ["./list-prestations.component.scss"],
 })
-export class ListPrestationsComponent implements OnInit {
-  public collection: Prestation[];
+export class ListPrestationsComponent implements OnInit, OnDestroy {
+  // public collection: Prestation[];
+  public collection$: Observable<Prestation[]>;
   public headers: string[];
+  // private sub: Subscription;
 
   constructor(private ps: PrestationService) {}
 
   ngOnInit() {
-    this.collection = this.ps.collection;
+    this.collection$ = this.ps.collection$;
+    // this.collection = this.ps.collection;
+    // this.sub = this.ps.collection$.subscribe(data => {
+    //  this.collection = data;
+    // });
     this.headers = [
       "type",
       "client",
@@ -23,6 +30,11 @@ export class ListPrestationsComponent implements OnInit {
       "total ht",
       "total ttc",
       "state",
+      "delete",
     ];
+  }
+
+  ngOnDestroy(): void {
+    // this.sub.unsubscribe();
   }
 }
