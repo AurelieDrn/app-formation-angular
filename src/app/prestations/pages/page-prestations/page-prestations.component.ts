@@ -1,8 +1,8 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
-import { LinksI } from "src/app/shared/interfaces/links-i";
-import { ActivatedRoute, Data } from "@angular/router";
-import { Subscription, Observable } from "rxjs";
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+import { Observable } from "rxjs";
 import { pluck } from "rxjs/operators";
+import { LinksI } from "src/app/shared/interfaces/links-i";
 
 @Component({
   selector: "app-page-prestations",
