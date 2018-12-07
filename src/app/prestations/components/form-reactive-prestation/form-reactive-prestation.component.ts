@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output, Input } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { State } from "src/app/shared/enums/state.enum";
 import { Prestation } from "src/app/shared/models/prestation";
@@ -10,7 +10,7 @@ import { Prestation } from "src/app/shared/models/prestation";
 })
 export class FormReactivePrestationComponent implements OnInit {
   public states = Object.values(State);
-  public init = new Prestation();
+  @Input() init = new Prestation();
   public form: FormGroup;
 
   @Output() nItem: EventEmitter<Prestation> = new EventEmitter();

@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { faTrashAlt } from "@fortawesome/free-solid-svg-icons";
+import { faTrashAlt, faEdit } from "@fortawesome/free-solid-svg-icons";
 import { State } from "src/app/shared/enums/state.enum";
 import { Prestation } from "src/app/shared/models/prestation";
 import { PrestationService } from "../../services/prestation.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-prestation",
@@ -14,7 +15,9 @@ export class PrestationComponent implements OnInit {
   // public states = State;
   public states = Object.values(State);
   public faTrashAlt = faTrashAlt;
-  constructor(private ps: PrestationService) {}
+  public faEdit = faEdit;
+
+  constructor(private ps: PrestationService, private router: Router) {}
 
   ngOnInit() {}
 
@@ -38,6 +41,10 @@ export class PrestationComponent implements OnInit {
     // this.ps.delete(this.item).subscribe(data => {
     // traitement response api
     // });
+  }
+
+  edit() {
+    this.router.navigate([`prestations/edit/${this.item.id}`]);
   }
 
   public getDetail() {

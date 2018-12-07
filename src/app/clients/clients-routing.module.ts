@@ -9,6 +9,7 @@ const appRoutes: Routes = [
   {
     path: "",
     component: PageClientsComponent,
+    data: { title: "Clients" },
     children: [
       { path: "", redirectTo: "detail", pathMatch: "full" },
       { path: "detail", component: DetailClientComponent },

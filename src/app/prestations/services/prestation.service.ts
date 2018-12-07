@@ -68,12 +68,13 @@ export class PrestationService {
 
   update(item: Prestation, state?: State): Promise<any> {
     // recréer un nouveau objet
-    const presta = { ...item };
+    let presta = { ...item };
     if (state) {
       presta.state = state;
     }
+
     return this.itemsCollection
-      .doc(item.id)
+      .doc(presta.id)
       .update(presta)
       .catch(e => {
         console.log(e);

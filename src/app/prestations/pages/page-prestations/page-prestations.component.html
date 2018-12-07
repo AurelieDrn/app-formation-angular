@@ -1,4 +1,4 @@
-<app-template-a title="prestations">
+<app-template-a [title]="title$ | async">
   <app-list-prestations></app-list-prestations>
 </app-template-a>
 <app-tab [items]="items"></app-tab>
